@@ -1,0 +1,44 @@
+
+@font-face {
+font-family:BRLNSDB ;
+src:url(../fonts/BRLNSDB.ttf)
+}
+.h2
+{
+background-color: #8e173d;
+padding:20px;
+border-radius:20px;
+margin-top: 5%;
+font-size: 30px;
+}
+#map
+{
+    
+height:500px;
+width:100%}
+.team-block
+{
+margin-top: 50px;
+}
+.Image img
+{
+   margin-left: 200px;
+    height: auto;
+    align-items: center;
+    width:40%;
+height:40%;
+border-radius: 50%;
+}
+h5
+{
+    color: burlywood;
+    display: flex;
+    font-size: 30px;
+        height: 200px;
+        justify-content:center;
+}
+.description
+{
+    margin-left: 200px;
+    size: 60px;
+}

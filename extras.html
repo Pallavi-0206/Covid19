@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Covid-19 extras</title>
+    <link rel="stylesheet" href="css/main_style.css">
+    <link rel="stylesheet" href="css/project_covid.css?family=Lato:100,300,400">
+    <link rel="stylesheet" type="text/css" href="css/extraheading.css">
+  </head>
+  <body>
+ 
+    <!-- Header -->
+
+    <header class="primary-header container group">
+
+      <h1 class="logo">
+        <a href="index.html">COVID-19<br>GLOBAL PANDEMIC</a>
+      </h1>
+
+      <h3 class="tagline"></h3>
+
+      <nav class="nav primary-nav">
+        <a href="project_covid.html">|Home</a>
+        <a href="info.html">|Info|</a>
+        <a href="helpline.html">Helplines|</a>
+        <a href="helpcentre.html">Helpcenters|</a><br>
+        <a href="latest_guidelines.html">|Latest guidelines|</a>
+        <a href="donation.html">Donation|</a>
+        <a href="extras.html">Extras|</a>
+        <a href="LIVE CAES/Donation_Form.html">Statistics|</a>
+        <a href="about.html">About Us|</a>
+
+      </nav>
+
+
+    </header>
+ <!-- Lead -->
+
+    <section class="row-alt">
+      <div class="lead container">
+
+        <h1>Extras</h1>
+<h2>MYTH BUSTING QUIZ</h2>
+<section class="hero container" >
+<a class="btn btn-alt" href="ques2.0.html">  QUIZ  </a>
+</section>
+
+
+
+<h2>COMIC</h2>
+<section class="hero container">
+     <a class="btn btn-alt" href="https://www.mohfw.gov.in/pdf/Corona_comic_PGI.pdf">  COMIC  </a>
+   </section>
+
+
+
+
+
+
+<div class="w3-container">
+  <h2>GALLERY</h2>
+
+
+
+ </div>
+
+
+
+ <!- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 /8</div>
+    <img src="img/cor.jpg"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">COVID-19</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 8</div>
+    <img src="img/gallery 9.jpeg" height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">Family time</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 8</div>
+    <img src="img/gallery 9.jpg"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">LET'S BETTER OURSELVES</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 8</div>
+    <img src="img/gallery 8.jpg"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">FAMILY TIME</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">5/ 8</div>
+    <img src="img/gallery 10.jpg"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">SOCIAL DISTANCING</div>
+  </div>
+   <div class="mySlides fade">
+    <div class="numbertext">6/ 8</div>
+    <img src="img/gallery2.webp"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">FOLLW GUIDELINES</div>
+  </div>
+<div class="mySlides fade">
+    <div class="numbertext">7/ 8</div>
+    <img src="img/gallery 6.webp"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">DOCTORS</div>
+  </div>
+  <div class="mySlides fade">
+    <div class="numbertext">8/ 8</div>
+    <img src="img/gallery3.jpg"  height="500px" width="800px" alt="There was supposed to be an image">
+    <div class="text">CORONA WARRIORS</div>
+  </div>
+
+
+ <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+
+<script>
+
+ var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+
+</script>
+<!---script for button--->
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+<h2>VIDEOS</h2>
+
+
+
+
+
+<iframe width="424" height="238" src="https://www.youtube.com/embed/yEIPefMsf70" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/9Tv2BVN_WTk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/Qg8sRsERlwU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/1APwq1df6Mw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/8c_UJwLq8PI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="424" height="238" src="https://www.youtube.com/embed/zDx1LKkk5c4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+   </section>
+</section>
+<!-----footer--->
+
+    <footer class="primary-footer container group">
+
+      
+      <small>&copy; COVID-19 Analytica. <br> Pallavi Joshi <br> Tarun Kaushik</small>
+
+     <nav class="nav primary-nav">
+        <a href="project_covid.html">|Home</a>
+        <a href="info.html">|Info|</a>
+        <a href="helpline.html">Helplines|</a>
+        <a href="helpcentre.html">Helpcenters|</a><br>
+        <a href="latest_guidelines.html">|Latest guidelines|</a>
+        <a href="donation.html">Donation|</a>
+        <a href="extras.html">Extras|</a>
+        <a href="LIVE CAES/Donation_Form.html">Statistics|</a>
+        <a href="about.html">About Us|</a>
+
+      </nav>
+
+
+    </footer>
+
+  
+</body></html>

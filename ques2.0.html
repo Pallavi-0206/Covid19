@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/quiz.css">
+	<link rel="stylesheet" type="text/css" href="css/extraheading.css">
+	<title>COVID-19 quiz</title>
+</head>
+<body>
+ <!-- Header -->
+
+    <header class="primary-header container group">
+
+      <h1 class="logo">
+        <a href="index.html">COVID-19 Global <br>Panedemic</a>
+      </h1>
+
+      <h3 class="tagline">Let's check your knowledge!!</h3>
+
+
+     <nav class="nav primary-nav">
+        <a href="project_covid.html">|Home</a>
+        <a href="info.html">|Info|</a>
+        <a href="helpline.html">Helplines|</a>
+        <a href="helpcentre.html">Helpcenters|</a><br>
+        <a href="latest_guidelines.html">|Latest guidelines|</a>
+        <a href="donation.html">Donation|</a>
+        <a href="extras.html">Extras|</a>
+        <a href="LIVE CAES/Donation_Form.html">Statistics|</a>
+        <a href="about.html">About Us|</a>
+
+      </nav>
+
+    </header>
+
+<!-- Lead -->
+
+
+        <h1>Myth Busting Quiz</h1>
+
+        <p>Select the correct option and submit to get your score </p>
+
+      
+    
+      <section class="row-alt">
+      <div class="lead container">
+   
+
+     
+
+
+
+
+
+
+<div id="quiz"></div>
+<button id="submit">Get Results</button>
+<div id="results"></div>
+<script type="text/javascript">
+	var myQuestions =[
+  
+    {
+        question: "What is the official name of the virus as designated by the World Health Organization (WHO)?",
+        answers: {
+            a: 'Wuhan flu',
+            b: 'Covid-19',
+            c: 'Sars-CoV-2'
+        },
+          correctAnswer: 'c'
+    },
+
+     {
+        question: "What is a safe distance to stay apart from someone who is sick? ",
+        answers: {
+            a: '50cm',
+            b: '1 meter',
+            c: '30cm'
+        },
+        correctAnswer: 'b'
+    },/*
+      {
+        question: "Name the vaccine that is jointly developed by the German company BioNTech and US pharma giant Pfizer for COVID-19?",
+        answers: {
+      
+            a: 'BNT162B'       
+            b: 'PICOVACCC',
+            c: 'Both A and B'
+        },
+        correctAnswer: 'a'
+    },*/
+     {
+        question: "From Where did Corona gets Its name?",
+        answers: {
+            a: 'Fish',
+            b: "Sun's Corona",
+            c: 'Bats'
+        },
+        correctAnswer: 'b'
+    },
+     {
+        question: "The genetic material of Corona virus is",
+        answers: {
+            a: 'DNA',
+            b: 'Protiens',
+            c: 'RNA'
+        },
+        correctAnswer: 'c'
+    },
+   
+    {
+        question: "The first positive case of Coronavirus was found in ...",
+        answers: {
+            a: 'Toronto',
+            b: 'Wuhan',
+            c: 'New York'
+        },
+        correctAnswer: 'b'
+    },
+    
+     {
+         question: "Does the UK's National Health Service say you can use ibuprofen as a treatment of the symptoms of Covid-19?",
+        answers: {
+            a: 'Yes',
+            b: 'No',
+         
+        },
+        correctAnswer: 'a'
+    },
+   
+    {
+        question: "What is social Distancing?",
+        answers: {
+            a: 'Stop going to Crowded Places',
+            b: 'Stop talking to people you live with',
+            c: 'Stop Speaking on Phone'
+        },
+        correctAnswer: 'a'
+    },
+    ]; 
+    
+
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+
+function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+
+    function showQuestions(questions, quizContainer){
+        // we'll need a place to store the output and the answer choices
+        var output = [];
+        var answers;
+
+        // for each question...
+        for(var i=0; i<questions.length; i++){
+            
+            // first reset the list of answers
+            answers = [];
+
+            // for each available answer...
+            for(letter in questions[i].answers){
+
+                // ...add an html radio button
+                answers.push(
+                    '<label>'
+                        + '<input type="radio" name="question'+i+'" value="'+letter+'">'
+                        + letter + ': '
+                        + questions[i].answers[letter]
+                    + '</label>'
+                );
+            }
+
+            // add this question and its answers to the output
+            output.push(
+                '<div class="question">' + questions[i].question + '</div>'
+                + '<div class="answers">' + answers.join('') + '</div>'
+            );
+        }
+
+        // finally combine our output list into one string of html and put it on the page
+        quizContainer.innerHTML = output.join('');
+    }
+
+
+    function showResults(questions, quizContainer, resultsContainer){
+        
+        // gather answer containers from our quiz
+        var answerContainers = quizContainer.querySelectorAll('.answers');
+        
+        // keep track of user's answers
+        var userAnswer = '';
+        var numCorrect = 0;
+        
+        // for each question...
+        for(var i=0; i<questions.length; i++){
+
+            // find selected answer
+            userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
+            
+            // if answer is correct
+            if(userAnswer===questions[i].correctAnswer){
+                // add to the number of correct answers
+                numCorrect++;
+                
+                // color the answers green
+                answerContainers[i].style.color = 'lightgreen';
+            }
+            // if answer is wrong or blank
+            else{
+                // color the answers red
+                answerContainers[i].style.color = 'red';
+            }
+        }
+
+        // show number of correct answers out of total
+        resultsContainer.innerHTML = numCorrect + ' out of ' + questions.length;
+    }
+
+    // show questions right away
+    showQuestions(questions, quizContainer);
+    
+    // on submit, show results
+    submitButton.onclick = function(){
+        showResults(questions, quizContainer, resultsContainer);
+    }
+
+}
+</script>
+</div>
+</section>
+<!-- Footer -->
+
+    <footer class="primary-footer container group">
+
+      
+        <small>&copy; COVID-19 Analytica. <br> Pallavi Joshi <br> Tarun Kaushik</small>
+<nav class="nav primary-nav">
+        <a href="project_covid.html">|Home</a>
+        <a href="info.html">|Info|</a>
+        <a href="helpline.html">Helplines|</a>
+        <a href="helpcentre.html">Helpcenters|</a><br>
+        <a href="latest_guidelines.html">|Latest guidelines|</a>
+        <a href="donation.html">Donation|</a>
+        <a href="extras.html">Extras|</a>
+        <a href="LIVE CAES/Donation_Form.html">Statistics|</a>
+        <a href="about.html">About Us|</a>
+
+      </nav>
+    </footer>
+
+
+
+</body>
+</html>
